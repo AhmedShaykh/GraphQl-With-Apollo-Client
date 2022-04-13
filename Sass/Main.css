@@ -13,4 +13,14 @@
   display: grid;
   place-items: center;
 }
+
+html {
+  font-size: 62.5%;
+}
+
+h1 {
+  color: #1a3434;
+  font-weight: bolder;
+  font-size: 10rem;
+}
 /*# sourceMappingURL=Main.css.map */
