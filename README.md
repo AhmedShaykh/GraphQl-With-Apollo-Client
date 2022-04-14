@@ -1,1 +1,1 @@
-# Learning Sass & Scss
+# Learning SASS & SCSS
