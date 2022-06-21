@@ -18,22 +18,41 @@ function Dev() {
     if (loading) return <h3>Loading...</h3>;
     if (error) return <h3>Error :(</h3>;
 
-    const { developers } = data;
+    const { Developers } = data;
 
     return (
-        <div>
-            <h2>Developers List :</h2>
-            <table>
-                <h3>
+        <div className="App">
+            <h2>Developers List ;</h2>
+            <table border={4} width="500">
+                <thead>
+                    <tr>
+                        <th>Name :</th>
+                        <th>Age :</th>
+                        <th>Email :</th>
+                    </tr>
+                </thead>
+                <tbody>
                     {
-                        developers.map(dev => {
-                            return(<tr>
+                        Developers.map(dev => {
+                            return (<tr key={dev.id}>
                                 <td>{dev.name}</td>
+                                <td>{dev.age}</td>
+                                <td>{dev.email}</td>
                             </tr>)
                         })
                     }
-                </h3>
+                </tbody>
             </table>
+
+            {/* <ul>
+                {Developers.map(dev => {
+                    return (
+                        <h3>
+                            <li key={dev}>{dev.name}</li>
+                        </h3>
+                    )
+                })}
+            </ul> */}
         </div>
     );
 }
