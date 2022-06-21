@@ -36,7 +36,9 @@ const Developers = [
 
 const resolvers = {
   Query: {
-    Developers: () => Developers,
+    Developers: () => {
+      return Developers
+    }
   },
 };
 
