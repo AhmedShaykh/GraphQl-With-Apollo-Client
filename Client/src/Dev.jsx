@@ -26,18 +26,18 @@ function Dev() {
             <table border={4} width="500">
                 <thead>
                     <tr>
-                        <th>Name :</th>
-                        <th>Age :</th>
-                        <th>Email :</th>
+                        <th height="50">Name :</th>
+                        <th height="50">Age :</th>
+                        <th height="50">Email :</th>
                     </tr>
                 </thead>
                 <tbody>
                     {
                         Developers.map(dev => {
                             return (<tr key={dev.id}>
-                                <td>{dev.name}</td>
-                                <td>{dev.age}</td>
-                                <td>{dev.email}</td>
+                                <td height="70">{dev.name}</td>
+                                <td height="70">{dev.age}</td>
+                                <td height="70">{dev.email}</td>
                             </tr>)
                         })
                     }
