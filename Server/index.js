@@ -15,19 +15,19 @@ const typeDefs = gql`
 
 const Developers = [
   {
-    "id": 0,
+    "id": 1,
     "name": "Ahmed",
     "email": "ahmed@gmail.com",
     "age": 21
   },
   {
-    "id": 1,
+    "id": 2,
     "name": "Saleem",
     "email": "saleem@gmail.com",
     "age": 21
   },
   {
-    "id": 2,
+    "id": 3,
     "name": "Shaikh",
     "email": "shaikh@gmail.com",
     "age": 21
