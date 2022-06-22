@@ -1,5 +1,8 @@
 import React from "react";
-import { useQuery, gql } from "@apollo/client";
+import { useQuery,
+    gql,
+    useMutation
+} from "@apollo/client";
 
 const GET_API = gql`
   query GetAllAPIs {
@@ -9,6 +12,21 @@ const GET_API = gql`
         email,
         id
       }
+  }
+`;
+
+const ADD_API = gql`
+  mutation AddDeveloper($id: Int!, $name: String!, $age: Int, $email: String) {
+    addDeveloper( {
+        id: $id,
+        name: $name,
+        age: $age,
+        email: $email
+    }) 
+    {
+      id
+      type
+    }
   }
 `;
 
