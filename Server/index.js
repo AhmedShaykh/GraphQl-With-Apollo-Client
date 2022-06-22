@@ -22,15 +22,15 @@ const Developers = [
   },
   {
     "id": 1,
-    "name": "Abrar",
-    "email": "abrar@gmail.com",
-    "age": 20
+    "name": "Saleem",
+    "email": "saleem@gmail.com",
+    "age": 21
   },
   {
     "id": 2,
-    "name": "Yaseen",
-    "email": "yaseen@gmail.com",
-    "age": 20
+    "name": "Shaikh",
+    "email": "shaikh@gmail.com",
+    "age": 21
   }
 ];
 
