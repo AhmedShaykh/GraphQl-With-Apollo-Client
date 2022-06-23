@@ -24,14 +24,19 @@ const ADD_API = gql`
         email: $email
     }) 
     {
-      id
-      type
+      id,
+      name,
+      age,
+      email
     }
   }
 `;
 
 function Dev() {
     const { loading, error, data } = useQuery(GET_API);
+
+    // ============ POST METHOD ============ //
+    const [updataDeveloper] = useMutation(ADD_API);
 
     if (loading) return <h3>Loading...</h3>;
     if (error) return <h3>Error :(</h3>;
@@ -61,6 +66,8 @@ function Dev() {
                     }
                 </tbody>
             </table>
+
+            <button>Add</button>
 
             {/* <ul>
                 {Developers.map(dev => {
