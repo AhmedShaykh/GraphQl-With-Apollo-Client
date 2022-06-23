@@ -19,10 +19,12 @@ const GET_API = gql`
 const ADD_API = gql`
   mutation AddDeveloper($id: Int!, $name: String!, $age: Int, $email: String) {
     addDeveloper(
+        input: {
         id: $id,
         name: $name,
         age: $age,
         email: $email
+        }
     ) 
     {
       id,
@@ -71,10 +73,10 @@ function Dev() {
             <button onClick={() => {
                 addDeveloper({
                     variables: {
-                        id: 7,
-                        name: "Majid",
+                        id: 8,
+                        name: "Saqlain",
                         age: 22,
-                        email: "majid@gmail.com"
+                        email: "saqlain@gmail.com"
                     }
                 })
             }}>Add Developers</button>
