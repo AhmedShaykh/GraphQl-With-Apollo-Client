@@ -1,5 +1,6 @@
 import React from "react";
-import { useQuery,
+import {
+    useQuery,
     gql,
     useMutation
 } from "@apollo/client";
@@ -17,12 +18,12 @@ const GET_API = gql`
 
 const ADD_API = gql`
   mutation AddDeveloper($id: Int!, $name: String!, $age: Int, $email: String) {
-    addDeveloper( {
+    addDeveloper(
         id: $id,
         name: $name,
         age: $age,
         email: $email
-    }) 
+    ) 
     {
       id,
       name,
@@ -36,7 +37,7 @@ function Dev() {
     const { loading, error, data } = useQuery(GET_API);
 
     // ============ POST METHOD ============ //
-    const [updataDeveloper] = useMutation(ADD_API);
+    const [addDeveloper] = useMutation(ADD_API);
 
     if (loading) return <h3>Loading...</h3>;
     if (error) return <h3>Error :(</h3>;
@@ -66,9 +67,18 @@ function Dev() {
                     }
                 </tbody>
             </table>
-
-            <button>Add Developers</button>
-
+            <br />
+            <button onClick={() => {
+                addDeveloper({
+                    variables: {
+                        id: 7,
+                        name: "Majid",
+                        age: 22,
+                        email: "majid@gmail.com"
+                    }
+                })
+            }}>Add Developers</button>
+            <br /><br />
             {/* <ul>
                 {Developers.map(dev => {
                     return (
