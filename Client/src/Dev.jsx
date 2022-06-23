@@ -2,7 +2,7 @@ import React from "react";
 import {
     useQuery,
     gql,
-    useMutation
+    // useMutation
 } from "@apollo/client";
 
 const GET_API = gql`
@@ -16,30 +16,30 @@ const GET_API = gql`
   }
 `;
 
-const ADD_API = gql`
-  mutation AddDeveloper($id: Int!, $name: String!, $age: Int, $email: String) {
-    addDeveloper(
-        input: {
-        id: $id,
-        name: $name,
-        age: $age,
-        email: $email
-        }
-    ) 
-    {
-      id,
-      name,
-      age,
-      email
-    }
-  }
-`;
+// const ADD_API = gql`
+//   mutation AddDeveloper($id: Int!, $name: String!, $age: Int, $email: String) {
+//     addDeveloper(
+//         input: {
+//         id: $id,
+//         name: $name,
+//         age: $age,
+//         email: $email
+//         }
+//     ) 
+//     {
+//       id,
+//       name,
+//       age,
+//       email
+//     }
+//   }
+// `;
 
 function Dev() {
     const { loading, error, data } = useQuery(GET_API);
 
     // ============ POST METHOD ============ //
-    const [addDeveloper] = useMutation(ADD_API);
+    // const [addDeveloper] = useMutation(ADD_API);
 
     if (loading) return <h3>Loading...</h3>;
     if (error) return <h3>Error :(</h3>;
@@ -48,7 +48,7 @@ function Dev() {
 
     return (
         <div className="App">
-            <h2>Developers List ;</h2>
+            <h2>Developer's List:</h2>
             <table border={4} width="500">
                 <thead>
                     <tr>
@@ -70,7 +70,7 @@ function Dev() {
                 </tbody>
             </table>
             <br />
-            <button onClick={() => {
+            {/* <button onClick={() => {
                 addDeveloper({
                     variables: {
                         id: 9,
@@ -81,16 +81,7 @@ function Dev() {
                     refetchQueries: [{ query: GET_API }]
                 })
             }}>Add Developers</button>
-            <br /><br />
-            {/* <ul>
-                {Developers.map(dev => {
-                    return (
-                        <h3>
-                            <li key={dev}>{dev.name}</li>
-                        </h3>
-                    )
-                })}
-            </ul> */}
+            <br /><br /> */}
         </div>
     );
 }

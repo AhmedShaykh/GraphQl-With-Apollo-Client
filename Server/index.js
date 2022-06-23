@@ -24,8 +24,7 @@ const typeDefs = gql`
   }
 `;
 
-// const Developers = [ // ==========> Get
-let Developers = [ // ==========> POST
+let Developers = [
   {
     "id": 1,
     "name": "Ahmed",
@@ -50,9 +49,8 @@ const resolvers = {
   Query: {
     Developers: () => Developers
   },
-  Mutation: { // ==========> POST
-    addDeveloper: (_, { input }) => {
-      // console.log(input);
+  Mutation: {
+    addDeveloper: (e, { input }) => {
       Developers.push(
         {
         id: input.id,
@@ -61,6 +59,7 @@ const resolvers = {
         email: input.email
         }
       )
+      
       return (
         {
           name: input.name,

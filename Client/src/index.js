@@ -18,7 +18,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <ApolloProvider client={client}>
     <App />
-  // </ApolloProvider>
+  </ApolloProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function
