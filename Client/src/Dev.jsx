@@ -73,11 +73,12 @@ function Dev() {
             <button onClick={() => {
                 addDeveloper({
                     variables: {
-                        id: 8,
-                        name: "Saqlain",
-                        age: 22,
-                        email: "saqlain@gmail.com"
-                    }
+                        id: 9,
+                        name: "Elon Musk",
+                        age: 49,
+                        email: "elon@mustmust.com"
+                    },
+                    refetchQueries: [{ query: GET_API }]
                 })
             }}>Add Developers</button>
             <br /><br />
