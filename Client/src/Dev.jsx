@@ -67,7 +67,7 @@ function Dev() {
                 </tbody>
             </table>
 
-            <button>Add</button>
+            <button>Add Developers</button>
 
             {/* <ul>
                 {Developers.map(dev => {
